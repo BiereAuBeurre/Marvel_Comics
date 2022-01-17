@@ -25,6 +25,7 @@
 		EF7E5ACF2795B143009E4A0C /* ComicsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ACE2795B143009E4A0C /* ComicsInfo.swift */; };
 		EF7E5AD12795D1A1009E4A0C /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AD02795D1A1009E4A0C /* ComicCell.swift */; };
 		EF7E5AD32795F77E009E4A0C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AD22795F77E009E4A0C /* DetailsViewController.swift */; };
+		EF7E5AD52795FFC3009E4A0C /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AD42795FFC3009E4A0C /* UIImageView.swift */; };
 		F4A0126F82859D5DD2F5EF93 /* Pods_Marvel_Appsolute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B122354FA81B267260DCAC6 /* Pods_Marvel_Appsolute.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		EF7E5ACE2795B143009E4A0C /* ComicsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsInfo.swift; sourceTree = "<group>"; };
 		EF7E5AD02795D1A1009E4A0C /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
 		EF7E5AD22795F77E009E4A0C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		EF7E5AD42795FFC3009E4A0C /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				EF7E5ABF279596F2009E4A0C /* UIButton.swift */,
+				EF7E5AD42795FFC3009E4A0C /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				EF7E5AC427959A24009E4A0C /* ComicsViewController.swift in Sources */,
 				EF7E5AC0279596F2009E4A0C /* UIButton.swift in Sources */,
 				EF7E5A9627958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld in Sources */,
+				EF7E5AD52795FFC3009E4A0C /* UIImageView.swift in Sources */,
 				EF7E5AD12795D1A1009E4A0C /* ComicCell.swift in Sources */,
 				EF7E5ACF2795B143009E4A0C /* ComicsInfo.swift in Sources */,
 				EF7E5A9027958C5F009E4A0C /* HomeViewController.swift in Sources */,

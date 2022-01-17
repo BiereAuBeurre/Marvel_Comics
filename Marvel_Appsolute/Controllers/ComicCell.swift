@@ -41,8 +41,16 @@ class ComicCell: UICollectionViewCell {
     }
     
     func refreshData() {
+        
         comicNameLabel.text = comic?.title
-        imageCover.image = UIImage(named: "logomarvel")
+        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_medium."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_medium." {
+            imageCover.image = UIImage(named: "logomarvel")
+        } else {
+        print("image path is :\(imagepath)")
+        imageCover.loadImage(imagepath)
+//        imageCover.image = comic?.thumbnail.path+"portrait_medium"+comic?.thumbnail.thumbnailExtension
+    }
     }
     
     func setUp() {
