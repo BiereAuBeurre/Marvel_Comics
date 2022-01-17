@@ -82,7 +82,7 @@ class ComicsViewController: UIViewController {
 //    }
     
     
-    func fetchComics() {
+    private func fetchComics() {
 //        if dataMode == .api {
         comicsService.fetchAllComics { [weak self] result in
             guard let self = self else { return }
@@ -106,6 +106,12 @@ class ComicsViewController: UIViewController {
 //        print("we're in the FavoritesDataMode for comics VC")
 //    }
 }
+    
+    private func cellTapped(comic: Results) {
+        let detailsVC = DetailsViewController()
+        detailsVC.comic = comic
+        navigationController?.pushViewController(detailsVC, animated: true)
+    }
     
 }
 extension ComicsViewController {
@@ -153,5 +159,6 @@ extension ComicsViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedCell = comics[indexPath.row]
+        cellTapped(comic: selectedCell)
     }
 }

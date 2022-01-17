@@ -24,6 +24,7 @@
 		EF7E5ACC2795AD46009E4A0C /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ACB2795AD46009E4A0C /* APIConfiguration.swift */; };
 		EF7E5ACF2795B143009E4A0C /* ComicsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ACE2795B143009E4A0C /* ComicsInfo.swift */; };
 		EF7E5AD12795D1A1009E4A0C /* ComicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AD02795D1A1009E4A0C /* ComicCell.swift */; };
+		EF7E5AD32795F77E009E4A0C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AD22795F77E009E4A0C /* DetailsViewController.swift */; };
 		F4A0126F82859D5DD2F5EF93 /* Pods_Marvel_Appsolute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B122354FA81B267260DCAC6 /* Pods_Marvel_Appsolute.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		EF7E5ACB2795AD46009E4A0C /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		EF7E5ACE2795B143009E4A0C /* ComicsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsInfo.swift; sourceTree = "<group>"; };
 		EF7E5AD02795D1A1009E4A0C /* ComicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCell.swift; sourceTree = "<group>"; };
+		EF7E5AD22795F77E009E4A0C /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				EF7E5A8F27958C5F009E4A0C /* HomeViewController.swift */,
 				EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */,
 				EF7E5AD02795D1A1009E4A0C /* ComicCell.swift */,
+				EF7E5AD22795F77E009E4A0C /* DetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				EF7E5ACA27959D90009E4A0C /* ComicsService.swift in Sources */,
 				EF7E5A8E27958C5F009E4A0C /* SceneDelegate.swift in Sources */,
 				EF7E5AC827959D82009E4A0C /* StorageService.swift in Sources */,
+				EF7E5AD32795F77E009E4A0C /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
