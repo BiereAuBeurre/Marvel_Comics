@@ -21,7 +21,7 @@ class ComicCell: UICollectionViewCell {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .systemPink
+        contentView.backgroundColor = .lightGray
         refreshData()
         setUp()
     }
@@ -46,17 +46,23 @@ class ComicCell: UICollectionViewCell {
     }
     
     func setUp() {
+        imageCover.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(imageCover)
         comicNameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(comicNameLabel)
-        
-//        imageCover.translatesAutoresizingMaskIntoConstraints = false
-//        contentView.addSubview(imageCover)
+        comicNameLabel.adjustsFontSizeToFitWidth = true
+        comicNameLabel.numberOfLines = 0
+
         
         NSLayoutConstraint.activate([
             comicNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             comicNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             comicNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            comicNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
+            comicNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            imageCover.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            imageCover.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            imageCover.topAnchor.constraint(equalTo: contentView.topAnchor),
+            imageCover.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }
