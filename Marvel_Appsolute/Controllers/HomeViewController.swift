@@ -26,6 +26,8 @@ class HomeViewController: UIViewController {
     func showComicsVC() {
         let comicsVC = ComicsViewController()
 //        navigationController?.isNavigationBarHidden = false
+//        comicsVC.dataMode = .api
+        
         navigationController?.pushViewController(comicsVC, animated: true)
     }
 
