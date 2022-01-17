@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF7E5A8C27958C5F009E4A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5A8B27958C5F009E4A0C /* AppDelegate.swift */; };
+		EF7E5A8E27958C5F009E4A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5A8D27958C5F009E4A0C /* SceneDelegate.swift */; };
+		EF7E5A9027958C5F009E4A0C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5A8F27958C5F009E4A0C /* HomeViewController.swift */; };
+		EF7E5A9327958C5F009E4A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7E5A9127958C5F009E4A0C /* Main.storyboard */; };
+		EF7E5A9627958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5A9427958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld */; };
+		EF7E5A9827958C60009E4A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF7E5A9727958C60009E4A0C /* Assets.xcassets */; };
+		EF7E5A9B27958C60009E4A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF7E5A9927958C60009E4A0C /* LaunchScreen.storyboard */; };
+		EF7E5AA627958C61009E4A0C /* Marvel_AppsoluteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AA527958C61009E4A0C /* Marvel_AppsoluteTests.swift */; };
+		EF7E5AB027958C61009E4A0C /* Marvel_AppsoluteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AAF27958C61009E4A0C /* Marvel_AppsoluteUITests.swift */; };
+		EF7E5AB227958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AB127958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift */; };
+		EF7E5AC0279596F2009E4A0C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ABF279596F2009E4A0C /* UIButton.swift */; };
+		EF7E5AC427959A24009E4A0C /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */; };
+		EF7E5AC827959D82009E4A0C /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC727959D82009E4A0C /* StorageService.swift */; };
+		EF7E5ACA27959D90009E4A0C /* ComicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC927959D90009E4A0C /* ComicsService.swift */; };
+		F4A0126F82859D5DD2F5EF93 /* Pods_Marvel_Appsolute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B122354FA81B267260DCAC6 /* Pods_Marvel_Appsolute.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF7E5AA227958C60009E4A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF7E5A8027958C5F009E4A0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF7E5A8727958C5F009E4A0C;
+			remoteInfo = Marvel_Appsolute;
+		};
+		EF7E5AAC27958C61009E4A0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF7E5A8027958C5F009E4A0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF7E5A8727958C5F009E4A0C;
+			remoteInfo = Marvel_Appsolute;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1CC67778F5D6AB5C8C888F74 /* Pods-Marvel_Appsolute.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel_Appsolute.release.xcconfig"; path = "Target Support Files/Pods-Marvel_Appsolute/Pods-Marvel_Appsolute.release.xcconfig"; sourceTree = "<group>"; };
+		4FDA7C986797676A9E753EB8 /* Pods-Marvel_Appsolute.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel_Appsolute.debug.xcconfig"; path = "Target Support Files/Pods-Marvel_Appsolute/Pods-Marvel_Appsolute.debug.xcconfig"; sourceTree = "<group>"; };
+		5B122354FA81B267260DCAC6 /* Pods_Marvel_Appsolute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Marvel_Appsolute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7E5A8827958C5F009E4A0C /* Marvel_Appsolute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel_Appsolute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7E5A8B27958C5F009E4A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF7E5A8D27958C5F009E4A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF7E5A8F27958C5F009E4A0C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EF7E5A9227958C5F009E4A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF7E5A9527958C5F009E4A0C /* Marvel_Appsolute.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Marvel_Appsolute.xcdatamodel; sourceTree = "<group>"; };
+		EF7E5A9727958C60009E4A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF7E5A9A27958C60009E4A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF7E5A9C27958C60009E4A0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF7E5AA127958C60009E4A0C /* Marvel_AppsoluteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Marvel_AppsoluteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7E5AA527958C61009E4A0C /* Marvel_AppsoluteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppsoluteTests.swift; sourceTree = "<group>"; };
+		EF7E5AAB27958C61009E4A0C /* Marvel_AppsoluteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Marvel_AppsoluteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF7E5AAF27958C61009E4A0C /* Marvel_AppsoluteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppsoluteUITests.swift; sourceTree = "<group>"; };
+		EF7E5AB127958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppsoluteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EF7E5ABF279596F2009E4A0C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
+		EF7E5AC727959D82009E4A0C /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		EF7E5AC927959D90009E4A0C /* ComicsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF7E5A8527958C5F009E4A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A0126F82859D5DD2F5EF93 /* Pods_Marvel_Appsolute.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5A9E27958C60009E4A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5AA827958C61009E4A0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		427CEAF823029BA5CDADB8E4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B122354FA81B267260DCAC6 /* Pods_Marvel_Appsolute.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		943A0ED390DB8686AEDDBF76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4FDA7C986797676A9E753EB8 /* Pods-Marvel_Appsolute.debug.xcconfig */,
+				1CC67778F5D6AB5C8C888F74 /* Pods-Marvel_Appsolute.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EF7E5A7F27958C5F009E4A0C = {
+			isa = PBXGroup;
+			children = (
+				EF7E5A8A27958C5F009E4A0C /* Marvel_Appsolute */,
+				EF7E5AA427958C61009E4A0C /* Marvel_AppsoluteTests */,
+				EF7E5AAE27958C61009E4A0C /* Marvel_AppsoluteUITests */,
+				EF7E5A8927958C5F009E4A0C /* Products */,
+				943A0ED390DB8686AEDDBF76 /* Pods */,
+				427CEAF823029BA5CDADB8E4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EF7E5A8927958C5F009E4A0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5A8827958C5F009E4A0C /* Marvel_Appsolute.app */,
+				EF7E5AA127958C60009E4A0C /* Marvel_AppsoluteTests.xctest */,
+				EF7E5AAB27958C61009E4A0C /* Marvel_AppsoluteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF7E5A8A27958C5F009E4A0C /* Marvel_Appsolute */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5AC627959D77009E4A0C /* Services */,
+				EF7E5AC527959CE0009E4A0C /* Controllers */,
+				EF7E5A8B27958C5F009E4A0C /* AppDelegate.swift */,
+				EF7E5A8D27958C5F009E4A0C /* SceneDelegate.swift */,
+				EF7E5ABE279596E1009E4A0C /* Extensions */,
+				EF7E5A9127958C5F009E4A0C /* Main.storyboard */,
+				EF7E5A9727958C60009E4A0C /* Assets.xcassets */,
+				EF7E5A9927958C60009E4A0C /* LaunchScreen.storyboard */,
+				EF7E5A9C27958C60009E4A0C /* Info.plist */,
+				EF7E5A9427958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld */,
+			);
+			path = Marvel_Appsolute;
+			sourceTree = "<group>";
+		};
+		EF7E5AA427958C61009E4A0C /* Marvel_AppsoluteTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5AA527958C61009E4A0C /* Marvel_AppsoluteTests.swift */,
+			);
+			path = Marvel_AppsoluteTests;
+			sourceTree = "<group>";
+		};
+		EF7E5AAE27958C61009E4A0C /* Marvel_AppsoluteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5AAF27958C61009E4A0C /* Marvel_AppsoluteUITests.swift */,
+				EF7E5AB127958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift */,
+			);
+			path = Marvel_AppsoluteUITests;
+			sourceTree = "<group>";
+		};
+		EF7E5ABE279596E1009E4A0C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5ABF279596F2009E4A0C /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EF7E5AC527959CE0009E4A0C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5A8F27958C5F009E4A0C /* HomeViewController.swift */,
+				EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EF7E5AC627959D77009E4A0C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				EF7E5AC727959D82009E4A0C /* StorageService.swift */,
+				EF7E5AC927959D90009E4A0C /* ComicsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF7E5A8727958C5F009E4A0C /* Marvel_Appsolute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF7E5AB527958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_Appsolute" */;
+			buildPhases = (
+				66CA6E017871F782DF9ED399 /* [CP] Check Pods Manifest.lock */,
+				EF7E5A8427958C5F009E4A0C /* Sources */,
+				EF7E5A8527958C5F009E4A0C /* Frameworks */,
+				EF7E5A8627958C5F009E4A0C /* Resources */,
+				D4E2E2F65FFDFAC491EBE7ED /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Marvel_Appsolute;
+			productName = Marvel_Appsolute;
+			productReference = EF7E5A8827958C5F009E4A0C /* Marvel_Appsolute.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF7E5AA027958C60009E4A0C /* Marvel_AppsoluteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF7E5AB827958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_AppsoluteTests" */;
+			buildPhases = (
+				EF7E5A9D27958C60009E4A0C /* Sources */,
+				EF7E5A9E27958C60009E4A0C /* Frameworks */,
+				EF7E5A9F27958C60009E4A0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF7E5AA327958C60009E4A0C /* PBXTargetDependency */,
+			);
+			name = Marvel_AppsoluteTests;
+			productName = Marvel_AppsoluteTests;
+			productReference = EF7E5AA127958C60009E4A0C /* Marvel_AppsoluteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF7E5AAA27958C61009E4A0C /* Marvel_AppsoluteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF7E5ABB27958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_AppsoluteUITests" */;
+			buildPhases = (
+				EF7E5AA727958C61009E4A0C /* Sources */,
+				EF7E5AA827958C61009E4A0C /* Frameworks */,
+				EF7E5AA927958C61009E4A0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF7E5AAD27958C61009E4A0C /* PBXTargetDependency */,
+			);
+			name = Marvel_AppsoluteUITests;
+			productName = Marvel_AppsoluteUITests;
+			productReference = EF7E5AAB27958C61009E4A0C /* Marvel_AppsoluteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF7E5A8027958C5F009E4A0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					EF7E5A8727958C5F009E4A0C = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					EF7E5AA027958C60009E4A0C = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EF7E5A8727958C5F009E4A0C;
+					};
+					EF7E5AAA27958C61009E4A0C = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = EF7E5A8727958C5F009E4A0C;
+					};
+				};
+			};
+			buildConfigurationList = EF7E5A8327958C5F009E4A0C /* Build configuration list for PBXProject "Marvel_Appsolute" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF7E5A7F27958C5F009E4A0C;
+			productRefGroup = EF7E5A8927958C5F009E4A0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF7E5A8727958C5F009E4A0C /* Marvel_Appsolute */,
+				EF7E5AA027958C60009E4A0C /* Marvel_AppsoluteTests */,
+				EF7E5AAA27958C61009E4A0C /* Marvel_AppsoluteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF7E5A8627958C5F009E4A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7E5A9B27958C60009E4A0C /* LaunchScreen.storyboard in Resources */,
+				EF7E5A9827958C60009E4A0C /* Assets.xcassets in Resources */,
+				EF7E5A9327958C5F009E4A0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5A9F27958C60009E4A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5AA927958C61009E4A0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		66CA6E017871F782DF9ED399 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Marvel_Appsolute-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4E2E2F65FFDFAC491EBE7ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvel_Appsolute/Pods-Marvel_Appsolute-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Marvel_Appsolute/Pods-Marvel_Appsolute-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marvel_Appsolute/Pods-Marvel_Appsolute-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF7E5A8427958C5F009E4A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7E5AC427959A24009E4A0C /* ComicsViewController.swift in Sources */,
+				EF7E5AC0279596F2009E4A0C /* UIButton.swift in Sources */,
+				EF7E5A9627958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld in Sources */,
+				EF7E5A9027958C5F009E4A0C /* HomeViewController.swift in Sources */,
+				EF7E5A8C27958C5F009E4A0C /* AppDelegate.swift in Sources */,
+				EF7E5ACA27959D90009E4A0C /* ComicsService.swift in Sources */,
+				EF7E5A8E27958C5F009E4A0C /* SceneDelegate.swift in Sources */,
+				EF7E5AC827959D82009E4A0C /* StorageService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5A9D27958C60009E4A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7E5AA627958C61009E4A0C /* Marvel_AppsoluteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF7E5AA727958C61009E4A0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF7E5AB027958C61009E4A0C /* Marvel_AppsoluteUITests.swift in Sources */,
+				EF7E5AB227958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF7E5AA327958C60009E4A0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF7E5A8727958C5F009E4A0C /* Marvel_Appsolute */;
+			targetProxy = EF7E5AA227958C60009E4A0C /* PBXContainerItemProxy */;
+		};
+		EF7E5AAD27958C61009E4A0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF7E5A8727958C5F009E4A0C /* Marvel_Appsolute */;
+			targetProxy = EF7E5AAC27958C61009E4A0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF7E5A9127958C5F009E4A0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF7E5A9227958C5F009E4A0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF7E5A9927958C60009E4A0C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF7E5A9A27958C60009E4A0C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF7E5AB327958C61009E4A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF7E5AB427958C61009E4A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF7E5AB627958C61009E4A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FDA7C986797676A9E753EB8 /* Pods-Marvel_Appsolute.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marvel_Appsolute/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-Appsolute";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		EF7E5AB727958C61009E4A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CC67778F5D6AB5C8C888F74 /* Pods-Marvel_Appsolute.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Marvel_Appsolute/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-Appsolute";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		EF7E5AB927958C61009E4A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-AppsoluteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel_Appsolute.app/Marvel_Appsolute";
+			};
+			name = Debug;
+		};
+		EF7E5ABA27958C61009E4A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-AppsoluteTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Marvel_Appsolute.app/Marvel_Appsolute";
+			};
+			name = Release;
+		};
+		EF7E5ABC27958C61009E4A0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-AppsoluteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marvel_Appsolute;
+			};
+			name = Debug;
+		};
+		EF7E5ABD27958C61009E4A0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 33VL4C78U3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.manonrusso.Marvel-AppsoluteUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Marvel_Appsolute;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF7E5A8327958C5F009E4A0C /* Build configuration list for PBXProject "Marvel_Appsolute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF7E5AB327958C61009E4A0C /* Debug */,
+				EF7E5AB427958C61009E4A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF7E5AB527958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_Appsolute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF7E5AB627958C61009E4A0C /* Debug */,
+				EF7E5AB727958C61009E4A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF7E5AB827958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_AppsoluteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF7E5AB927958C61009E4A0C /* Debug */,
+				EF7E5ABA27958C61009E4A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF7E5ABB27958C61009E4A0C /* Build configuration list for PBXNativeTarget "Marvel_AppsoluteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF7E5ABC27958C61009E4A0C /* Debug */,
+				EF7E5ABD27958C61009E4A0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF7E5A9427958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF7E5A9527958C5F009E4A0C /* Marvel_Appsolute.xcdatamodel */,
+			);
+			currentVersion = EF7E5A9527958C5F009E4A0C /* Marvel_Appsolute.xcdatamodel */;
+			path = Marvel_Appsolute.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF7E5A8027958C5F009E4A0C /* Project object */;
+}
