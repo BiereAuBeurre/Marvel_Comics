@@ -100,6 +100,8 @@ extension DetailsViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
         parentStackView.translatesAutoresizingMaskIntoConstraints = false
@@ -128,9 +130,9 @@ extension DetailsViewController {
         if comic?.resultDescription != "" {
             synopsis.text = comic?.resultDescription
         } else {
-            synopsis.text = "no synopsis available for this comic"
+            synopsis.text = "Aucune description disponible pour ce comic 😞"
         }
-        synopsis.font = UIFont.preferredFont(forTextStyle: .headline)
+        synopsis.font = UIFont.preferredFont(forTextStyle: .subheadline)
         
         
         NSLayoutConstraint.activate([

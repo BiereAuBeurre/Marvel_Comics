@@ -48,20 +48,12 @@ extension HomeViewController {
         view.addSubview(logo)
         logo.image = UIImage(named: "logomarvel")
         logo.addShadow()
-    
-        
-        
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleLabel)
-        titleLabel.text = "Vous désirez consulter :"
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        titleLabel.textAlignment = .center
         
         seeComicsButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(seeComicsButton)
-        seeComicsButton.setTitle("Tous les comics", for: .normal)
-        seeComicsButton.titleLabel?.textColor = .blue
-        seeComicsButton.backgroundColor = .black
+        seeComicsButton.setTitle("Tous les comics 📖", for: .normal)
+        seeComicsButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
+        seeComicsButton.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
         seeComicsButton.setTitleColor(.white, for: .normal)
         seeComicsButton.addCornerRadius()
         seeComicsButton.addShadow()
@@ -69,8 +61,9 @@ extension HomeViewController {
         
         seeFavoritesButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(seeFavoritesButton)
-        seeFavoritesButton.setTitle("Les favoris", for: .normal)
-        seeFavoritesButton.backgroundColor = .black
+        seeFavoritesButton.setTitle("Les favoris ♥️", for: .normal)
+        seeFavoritesButton.backgroundColor = #colorLiteral(red: 0.521568656, green: 0.1098039225, blue: 0.05098039284, alpha: 1)
+        seeFavoritesButton.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         seeFavoritesButton.setTitleColor(.white, for: .normal)
         seeFavoritesButton.addCornerRadius()
         seeFavoritesButton.addShadow()
@@ -78,21 +71,21 @@ extension HomeViewController {
         
         NSLayoutConstraint.activate([
             logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),
-            logo.heightAnchor.constraint(equalToConstant: 100),
+            logo.heightAnchor.constraint(equalToConstant: 120),
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            logo.widthAnchor.constraint(equalToConstant: 80),
+            logo.widthAnchor.constraint(equalToConstant: 100),
             
-            titleLabel.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 160),
-            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+//            titleLabel.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 104),
+//            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+//            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             
-            seeComicsButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
-            seeComicsButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 88),
-            seeComicsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -88),
+            seeComicsButton.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 104),
+            seeComicsButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
+            seeComicsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),
             
-            seeFavoritesButton.topAnchor.constraint(equalTo: seeComicsButton.bottomAnchor, constant: 16),
-            seeFavoritesButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 88),
-            seeFavoritesButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -88)
+            seeFavoritesButton.topAnchor.constraint(equalTo: seeComicsButton.bottomAnchor, constant: 32),
+            seeFavoritesButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
+            seeFavoritesButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80)
         ])
 
     }

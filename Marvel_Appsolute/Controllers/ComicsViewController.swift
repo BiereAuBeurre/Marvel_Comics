@@ -21,13 +21,6 @@ public enum DataMode {
     }
 }
 
-//enum State<Data> {
-//    case loading
-//    case empty
-//    case error
-//    case showData(Data)
-//}
-
 class ComicsViewController: UIViewController {
     
     var collectionView: UICollectionView!
@@ -113,7 +106,7 @@ extension ComicsViewController {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumInteritemSpacing = 4
         layout.itemSize = CGSize(width:(self.collectionView.frame.size.width - 20)/2,height: (self.collectionView.frame.size.height)/3)
-        
+        title = dataMode.title
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(activityIndicator)
         activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
