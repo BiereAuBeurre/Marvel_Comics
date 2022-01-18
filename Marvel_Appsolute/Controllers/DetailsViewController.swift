@@ -100,6 +100,7 @@ extension DetailsViewController {
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
         titleLabel.numberOfLines = 0
+        titleLabel.textColor = .label
         view.addSubview(titleLabel)
         
         // STACKVIEW
@@ -121,10 +122,11 @@ extension DetailsViewController {
         parentStackView.addArrangedSubview(cover)
 
         // DESCRIPTION/SYNOPSIS
-        synopsis.textColor = .black
+        synopsis.textColor = .label
         if comic?.resultDescription != "" {
             synopsis.text = comic?.resultDescription
         } else {
+            synopsis.textColor = .label
             synopsis.text = "Aucune description disponible pour ce comic 😞"
         }
         synopsis.font = UIFont.preferredFont(forTextStyle: .subheadline)
