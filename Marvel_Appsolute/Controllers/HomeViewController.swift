@@ -23,6 +23,13 @@ class HomeViewController: UIViewController {
     }
 
     @objc
+    func showFavorites() {
+        let comicsVC = ComicsViewController()
+        comicsVC.dataMode = .favorites
+        navigationController?.pushViewController(comicsVC, animated: true)
+    }
+    
+    @objc
     func showComicsVC() {
         let comicsVC = ComicsViewController()
 //        navigationController?.isNavigationBarHidden = false
@@ -59,7 +66,6 @@ extension HomeViewController {
         seeComicsButton.addCornerRadius()
         seeComicsButton.addShadow()
         seeComicsButton.addTarget(self, action: #selector(showComicsVC), for: .touchUpInside)
-        view.addSubview(seeFavoritesButton)
         
         seeFavoritesButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(seeFavoritesButton)
@@ -68,7 +74,7 @@ extension HomeViewController {
         seeFavoritesButton.setTitleColor(.white, for: .normal)
         seeFavoritesButton.addCornerRadius()
         seeFavoritesButton.addShadow()
-        view.addSubview(seeFavoritesButton)
+        seeFavoritesButton.addTarget(self, action: #selector(showFavorites), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),

@@ -34,11 +34,14 @@ class ComicsViewController: UIViewController {
     private let activityIndicator = UIActivityIndicatorView(style: .large)
     var comics: /*[Comic]*/[ResultElement] = []
     var comicsService = ComicsService()
-        var dataMode: DataMode = .api
+    var dataMode: DataMode = .api
+    private var storageService = StorageService()
+
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.fetchComicsFromDataBase()
     }
     
     override func viewDidLoad() {
@@ -46,6 +49,21 @@ class ComicsViewController: UIViewController {
         self.setUpUI()
         self.fetchComicsFromApi()
         print("we're in comicsVC now")
+    }
+    
+    private func fetchComicsFromDataBase() {
+        guard dataMode == .favorites else { return }
+        do  { comics = try storageService.loadRecipes()
+            if comics.isEmpty == false {
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                }
+            }
+        } catch {
+            print("error: \(error.localizedDescription)")
+            
+        }
     }
     
     
@@ -84,9 +102,6 @@ extension ComicsViewController {
 //        layout.itemSize = CGSize(width: self.view.frame.width - 16, height: 60)
 //        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         layout.scrollDirection = .vertical
-        
-        
-        
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.register(ComicCell.self, forCellWithReuseIdentifier: ComicCell.identifier)
