@@ -14,19 +14,29 @@ extension UIButton {
         self.layer.cornerRadius = 5
     }
     
+//    func addShadow() {
+//          self.layer.shadowOffset = CGSize(width: 1, height: 1)
+//          self.layer.shadowOpacity = 0.8
+//          self.layer.shadowRadius = 2
+//          self.layer.shadowColor = UIColor.black.cgColor
+//      }
+}
+
+extension UIImageView {
+//    func addShadow() {
+//        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+//        self.layer.shadowOpacity = 0.8
+//        self.layer.shadowRadius = 2
+//        self.layer.shadowColor = UIColor.black.cgColor
+//      }
+}
+
+extension UIView {
+    
     func addShadow() {
           self.layer.shadowOffset = CGSize(width: 1, height: 1)
           self.layer.shadowOpacity = 0.8
           self.layer.shadowRadius = 2
           self.layer.shadowColor = UIColor.black.cgColor
-      }
-}
-
-extension UIImageView {
-    func addShadow() {
-        self.layer.shadowOffset = CGSize(width: 1, height: 1)
-        self.layer.shadowOpacity = 0.8
-        self.layer.shadowRadius = 2
-        self.layer.shadowColor = UIColor.black.cgColor
       }
 }

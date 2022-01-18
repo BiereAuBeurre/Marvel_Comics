@@ -31,6 +31,8 @@ class StorageService {
     func saveRecipe(_ comic: ResultElement) throws {
         let comicEntity = ComicEntity(context: viewContext)
         comicEntity.title = comic.title
+        comicEntity.thumbnail =  try? JSONEncoder().encode(comic.thumbnail)
+        comicEntity.synopsis = comic.resultDescription
 //        recipeEntity.name = recipe.name
 //        recipeEntity.imageUrl = recipe.imageUrl
 //        recipeEntity.recipeUrl = recipe.recipeUrl

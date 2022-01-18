@@ -8,10 +8,18 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-    private var isComicFavorite = false
+    
+    var parentStackView = UIStackView()
+//    var imageStackView = UIStackView()
+//    var infoStackView = UIStackView()
+    
+    
+    var synopsis = UITextView()
     var titleLabel = UILabel()
+    var cover = UIImageView()
     var storageService = StorageService()
-    var comic: ResultElement?//Comic?
+    var comic: ResultElement?
+    private var isComicFavorite = false
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -78,22 +86,66 @@ class DetailsViewController: UIViewController {
             isComicFavorite = true
         }
     }
-    
-    
+}
+
+//MARK: - Setting up View
+extension DetailsViewController {
     func setUpUI() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(titleLabel)
+        
+        view.backgroundColor = .systemBackground
+        
+        //MARK: - TITLE
         titleLabel.text = comic?.title
-        titleLabel.backgroundColor = .orange
+        titleLabel.textColor = .black
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.textAlignment = .center
+        view.addSubview(titleLabel)
+        
+        parentStackView.translatesAutoresizingMaskIntoConstraints = false
+        parentStackView.axis = .vertical
+        view.addSubview(parentStackView)
+        parentStackView.distribution = .fill
+        parentStackView.spacing = 16
+        parentStackView.contentMode = .left
+        
+        //MARK: -IMAGE COVER
+        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_xlarge." {
+            cover.image = UIImage(named: "logomarvel")
+        } else {
+            print("image path is :\(imagepath)")
+            cover.loadImage(imagepath)
+        }
+        cover.contentMode = .scaleAspectFit
+        parentStackView.addArrangedSubview(cover)
+        parentStackView.addArrangedSubview(synopsis)
+
+
+        //MARK: -DESCRIPTION
+        synopsis.textColor = .black
+
+        if comic?.resultDescription != "" {
+            synopsis.text = comic?.resultDescription
+        } else {
+            synopsis.text = "no synopsis available for this comic"
+        }
+        synopsis.font = UIFont.preferredFont(forTextStyle: .headline)
         
         
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            titleLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16)
+            
+            
+            parentStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
+//            parentStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            parentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            parentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+             view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: parentStackView.bottomAnchor, constant: 16),
         ])
-
+        
     }
-
+    
 }

@@ -43,30 +43,34 @@ class ComicCell: UICollectionViewCell {
     func refreshData() {
         
         comicNameLabel.text = comic?.title
-        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_medium."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
-        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_medium." {
+        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_xlarge." {
             imageCover.image = UIImage(named: "logomarvel")
         } else {
         print("image path is :\(imagepath)")
         imageCover.loadImage(imagepath)
-//        imageCover.image = comic?.thumbnail.path+"portrait_medium"+comic?.thumbnail.thumbnailExtension
     }
     }
     
     func setUp() {
         imageCover.translatesAutoresizingMaskIntoConstraints = false
+        imageCover.alpha = 0.2
         contentView.addSubview(imageCover)
         comicNameLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(comicNameLabel)
         comicNameLabel.adjustsFontSizeToFitWidth = true
         comicNameLabel.numberOfLines = 0
+        comicNameLabel.textColor = .black
+//        comicNameLabel.backgroundColor = .black
+        comicNameLabel.addShadow()
 
         
         NSLayoutConstraint.activate([
             comicNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
             comicNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             comicNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            comicNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            comicNameLabel.heightAnchor.constraint(equalToConstant: 60),
+//            comicNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             imageCover.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageCover.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageCover.topAnchor.constraint(equalTo: contentView.topAnchor),

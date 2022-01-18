@@ -32,7 +32,7 @@ class ComicsViewController: UIViewController {
     
     var collectionView: UICollectionView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    var comics: /*[Comic]*/[ResultElement] = []
+    var comics: [ResultElement] = []
     var comicsService = ComicsService()
     var dataMode: DataMode = .api
     private var storageService = StorageService()
@@ -50,22 +50,20 @@ class ComicsViewController: UIViewController {
         self.fetchComicsFromApi()
         print("we're in comicsVC now")
     }
+    //MARK: - Fetching comics methods according to dataMode
     
     private func fetchComicsFromDataBase() {
         guard dataMode == .favorites else { return }
-        do  { comics = try storageService.loadRecipes()
-            if comics.isEmpty == false {
+        do { comics = try storageService.loadRecipes()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
                 }
-            }
         } catch {
             print("error: \(error.localizedDescription)")
             
         }
     }
-    
     
     private func fetchComicsFromApi() {
         activityIndicator.startAnimating()
@@ -87,20 +85,20 @@ class ComicsViewController: UIViewController {
         }
 }
     
-    private func cellTapped(comic: /*Comic*/ResultElement) {
+    private func cellTapped(comic: ResultElement) {
         let detailsVC = DetailsViewController()
         detailsVC.comic = comic
         navigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }
+
+//MARK: -Setting up view
 extension ComicsViewController {
     
     func setUpUI() {
         view.backgroundColor = .systemBackground
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: self.view.frame.width - 16, height: 60)
-//        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
         layout.scrollDirection = .vertical
         
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
@@ -133,17 +131,14 @@ extension ComicsViewController {
     
 }
 //MARK: - setting up collection view
-
 extension ComicsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //appel réseau
         return comics.count
     }
     
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // appel réseau
         let comicCell = collectionView.dequeueReusableCell(withReuseIdentifier: ComicCell.identifier, for: indexPath) as! ComicCell
         comicCell.comic = comics[indexPath.row]
         return comicCell
