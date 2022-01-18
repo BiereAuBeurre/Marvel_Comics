@@ -43,12 +43,12 @@ class ComicCell: UICollectionViewCell {
     func refreshData() {
         
         comicNameLabel.text = comic?.title
-        var newHttps = comic?.thumbnail.path.dropFirst(4)
-        newHttps = "https\(newHttps ?? "")"
-        print(newHttps!)
-        let imagepath = "\(newHttps ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+//        var newHttps = comic?.thumbnail.path.dropFirst(4)
+//        newHttps = "https\(newHttps ?? "")"
+//        print(newHttps!)
+//        let imagepath = "\(newHttps ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
 
-//        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
 //        print("image path is :\(imagepath)")
         imageCover.loadImage(imagepath)
 //    }
