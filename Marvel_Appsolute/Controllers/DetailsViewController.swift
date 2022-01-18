@@ -7,17 +7,15 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+final class DetailsViewController: UIViewController {
     
-    var parentStackView = UIStackView()
-//    var imageStackView = UIStackView()
-//    var infoStackView = UIStackView()
+    //MARK: - Properties
+    private let parentStackView = UIStackView()
+    private let synopsis = UITextView()
+    private let titleLabel = UILabel()
+    private let cover = UIImageView()
     
-    
-    var synopsis = UITextView()
-    var titleLabel = UILabel()
-    var cover = UIImageView()
-    var storageService = StorageService()
+    private let storageService = StorageService()
     var comic: ResultElement?
     private var isComicFavorite = false
 
@@ -31,7 +29,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         setUpUI()
         print("we're now in detailsVC")
-        print("comic from detailsVC display is : \(String(describing: comic))")
+//        print("comic from detailsVC display is : \(String(describing: comic))")
     }
     
     
@@ -72,7 +70,9 @@ class DetailsViewController: UIViewController {
         }
     }
     
-    @objc func toggleFavorite() {
+    //MARK: - OBJC METHODS
+    @objc
+    func toggleFavorite() {
         /// Check if the recipe is already marked as favorite, then add it or remove it from our recipe entity (our favorite data base)
         if isComicFavorite {
             // suppression du favori
@@ -91,7 +91,6 @@ class DetailsViewController: UIViewController {
 //MARK: - Setting up View
 extension DetailsViewController {
     func setUpUI() {
-        
         view.backgroundColor = .systemBackground
         
         //MARK: - TITLE
@@ -104,6 +103,7 @@ extension DetailsViewController {
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
+        //MARK: STACKVIEW
         parentStackView.translatesAutoresizingMaskIntoConstraints = false
         parentStackView.axis = .vertical
         view.addSubview(parentStackView)
@@ -121,10 +121,9 @@ extension DetailsViewController {
         }
         cover.contentMode = .scaleAspectFit
         parentStackView.addArrangedSubview(cover)
-        parentStackView.addArrangedSubview(synopsis)
 
 
-        //MARK: -DESCRIPTION
+        //MARK: -DESCRIPTION/SYNOPSIS
         synopsis.textColor = .black
 
         if comic?.resultDescription != "" {
@@ -133,21 +132,18 @@ extension DetailsViewController {
             synopsis.text = "Aucune description disponible pour ce comic 😞"
         }
         synopsis.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        
-        
+        parentStackView.addArrangedSubview(synopsis)
+
+        //MARK: - Constraints
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            
-            
             parentStackView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-//            parentStackView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             parentStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             parentStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
              view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: parentStackView.bottomAnchor, constant: 16),
         ])
-        
     }
     
 }

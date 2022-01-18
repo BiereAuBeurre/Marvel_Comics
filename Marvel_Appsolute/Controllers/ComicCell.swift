@@ -14,7 +14,7 @@ class ComicCell: UICollectionViewCell {
     private var comicNameLabel = UILabel()
     private var imageCover = UIImageView()
     static let identifier = "ComicCell"
-    var comic: /*Comic?*/ResultElement? {
+    var comic: ResultElement? {
         didSet {
             refreshData()
         }
@@ -43,11 +43,13 @@ class ComicCell: UICollectionViewCell {
     func refreshData() {
         
         comicNameLabel.text = comic?.title
-        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
-//        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_xlarge." {
-//            imageCover.image = UIImage(named: "logomarvel")
-//        } else {
-        print("image path is :\(imagepath)")
+        var newHttps = comic?.thumbnail.path.dropFirst(4)
+        newHttps = "https\(newHttps ?? "")"
+        print(newHttps!)
+        let imagepath = "\(newHttps ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+
+//        let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
+//        print("image path is :\(imagepath)")
         imageCover.loadImage(imagepath)
 //    }
     }
@@ -61,7 +63,6 @@ class ComicCell: UICollectionViewCell {
         comicNameLabel.adjustsFontSizeToFitWidth = true
         comicNameLabel.numberOfLines = 0
         comicNameLabel.textColor = .black
-//        comicNameLabel.backgroundColor = .black
         comicNameLabel.addShadow()
 
         
@@ -70,7 +71,6 @@ class ComicCell: UICollectionViewCell {
             comicNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             comicNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             comicNameLabel.heightAnchor.constraint(equalToConstant: 60),
-//            comicNameLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
             imageCover.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             imageCover.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             imageCover.topAnchor.constraint(equalTo: contentView.topAnchor),

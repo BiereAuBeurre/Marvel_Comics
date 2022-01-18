@@ -67,7 +67,7 @@ class ComicsViewController: UIViewController {
                 switch result {
                 case .success(let comics):
                     self.comics = comics.data.results
-                    print("success!: \(comics)")
+//                    print("success!: \(comics)")
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
 
