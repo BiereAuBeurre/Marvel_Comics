@@ -14,7 +14,7 @@ class ComicCell: UICollectionViewCell {
     private var comicNameLabel = UILabel()
     private var imageCover = UIImageView()
     static let identifier = "ComicCell"
-    var comic: Results? {
+    var comic: /*Comic?*/ResultElement? {
         didSet {
             refreshData()
         }

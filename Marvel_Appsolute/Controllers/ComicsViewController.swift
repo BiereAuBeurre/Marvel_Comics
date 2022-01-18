@@ -32,7 +32,7 @@ class ComicsViewController: UIViewController {
     
     var collectionView: UICollectionView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    var comics: [Results] = []
+    var comics: /*[Comic]*/[ResultElement] = []
     var comicsService = ComicsService()
         var dataMode: DataMode = .api
 
@@ -56,9 +56,9 @@ class ComicsViewController: UIViewController {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {
-                case .success(let comic):
-                    self.comics = comic.data.results
-                    print("success!: \(comic.data.results)")
+                case .success(let comics):
+                    self.comics = comics.data.results
+                    print("success!: \(comics)")
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
 
@@ -69,7 +69,7 @@ class ComicsViewController: UIViewController {
         }
 }
     
-    private func cellTapped(comic: Results) {
+    private func cellTapped(comic: /*Comic*/ResultElement) {
         let detailsVC = DetailsViewController()
         detailsVC.comic = comic
         navigationController?.pushViewController(detailsVC, animated: true)
