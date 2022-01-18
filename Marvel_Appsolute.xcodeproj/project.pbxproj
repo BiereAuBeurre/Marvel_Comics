@@ -17,7 +17,7 @@
 		EF7E5AA627958C61009E4A0C /* Marvel_AppsoluteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AA527958C61009E4A0C /* Marvel_AppsoluteTests.swift */; };
 		EF7E5AB027958C61009E4A0C /* Marvel_AppsoluteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AAF27958C61009E4A0C /* Marvel_AppsoluteUITests.swift */; };
 		EF7E5AB227958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AB127958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift */; };
-		EF7E5AC0279596F2009E4A0C /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ABF279596F2009E4A0C /* UIButton.swift */; };
+		EF7E5AC0279596F2009E4A0C /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5ABF279596F2009E4A0C /* UIView.swift */; };
 		EF7E5AC427959A24009E4A0C /* ComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */; };
 		EF7E5AC827959D82009E4A0C /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC727959D82009E4A0C /* StorageService.swift */; };
 		EF7E5ACA27959D90009E4A0C /* ComicsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7E5AC927959D90009E4A0C /* ComicsService.swift */; };
@@ -64,7 +64,7 @@
 		EF7E5AAB27958C61009E4A0C /* Marvel_AppsoluteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Marvel_AppsoluteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF7E5AAF27958C61009E4A0C /* Marvel_AppsoluteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppsoluteUITests.swift; sourceTree = "<group>"; };
 		EF7E5AB127958C61009E4A0C /* Marvel_AppsoluteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_AppsoluteUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		EF7E5ABF279596F2009E4A0C /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		EF7E5ABF279596F2009E4A0C /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		EF7E5AC327959A24009E4A0C /* ComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsViewController.swift; sourceTree = "<group>"; };
 		EF7E5AC727959D82009E4A0C /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		EF7E5AC927959D90009E4A0C /* ComicsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsService.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		EF7E5ABE279596E1009E4A0C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EF7E5ABF279596F2009E4A0C /* UIButton.swift */,
+				EF7E5ABF279596F2009E4A0C /* UIView.swift */,
 				EF7E5AD42795FFC3009E4A0C /* UIImageView.swift */,
 			);
 			path = Extensions;
@@ -389,7 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF7E5AC427959A24009E4A0C /* ComicsViewController.swift in Sources */,
-				EF7E5AC0279596F2009E4A0C /* UIButton.swift in Sources */,
+				EF7E5AC0279596F2009E4A0C /* UIView.swift in Sources */,
 				EF7E5A9627958C5F009E4A0C /* Marvel_Appsolute.xcdatamodeld in Sources */,
 				EF7E5AD52795FFC3009E4A0C /* UIImageView.swift in Sources */,
 				EF7E5AD12795D1A1009E4A0C /* ComicCell.swift in Sources */,

@@ -7,21 +7,23 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
-    var logo = UIImageView()
-    var titleLabel = UILabel()
-    var seeComicsButton = UIButton()
-    var seeFavoritesButton = UIButton()
+final class HomeViewController: UIViewController {
+    
+    //MARK: - properties
+    private let logo = UIImageView()
+    private let titleLabel = UILabel()
+    private let seeComicsButton = UIButton()
+    private let seeFavoritesButton = UIButton()
     
     
-    
+    //MARK: - View life cycle method
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setUpUI()
     }
 
+    //MARK: - OBJC METHODS
     @objc
     func showFavorites() {
         let comicsVC = ComicsViewController()
@@ -32,17 +34,15 @@ class HomeViewController: UIViewController {
     @objc
     func showComicsVC() {
         let comicsVC = ComicsViewController()
-//        navigationController?.isNavigationBarHidden = false
-//        comicsVC.dataMode = .api
-        
         navigationController?.pushViewController(comicsVC, animated: true)
     }
 
 }
 
+//MARK: - Set up view
 extension HomeViewController {
     
-    func setUpUI() {
+    private func setUpUI() {
         
         logo.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logo)
@@ -74,11 +74,7 @@ extension HomeViewController {
             logo.heightAnchor.constraint(equalToConstant: 120),
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logo.widthAnchor.constraint(equalToConstant: 100),
-            
-//            titleLabel.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 104),
-//            titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            titleLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            
+             
             seeComicsButton.topAnchor.constraint(equalTo: logo.bottomAnchor, constant: 104),
             seeComicsButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 80),
             seeComicsButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -80),

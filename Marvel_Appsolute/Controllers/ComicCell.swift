@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ComicCell: UICollectionViewCell {
+final class ComicCell: UICollectionViewCell {
     
     //MARK: - Properties
     private var comicNameLabel = UILabel()
@@ -19,6 +19,8 @@ class ComicCell: UICollectionViewCell {
             refreshData()
         }
     }
+    
+    // MARK: Methods
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.backgroundColor = .lightGray
@@ -30,31 +32,26 @@ class ComicCell: UICollectionViewCell {
         fatalError("error")
     }
     
-    // MARK: Methods
-    
     /// Adding space between cells.
     override func layoutSubviews() {
         super.layoutSubviews()
         /// Set the values for top, left, bottom and right margins' cell.
-        let margins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+        let margins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         contentView.frame = contentView.frame.inset(by: margins)
     }
     
-    func refreshData() {
-        
+    //MARK: - private methods
+    private func refreshData() {
         comicNameLabel.text = comic?.title
-//        var newHttps = comic?.thumbnail.path.dropFirst(4)
-//        newHttps = "https\(newHttps ?? "")"
-//        print(newHttps!)
-//        let imagepath = "\(newHttps ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
-
         let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
-//        print("image path is :\(imagepath)")
-        imageCover.loadImage(imagepath)
-//    }
+        if imagepath == "/portrait_xlarge." {
+            imageCover.image = UIImage(named: "logomarvel")
+        } else {
+            imageCover.loadImage(imagepath)
+        }
     }
     
-    func setUp() {
+    private func setUp() {
         imageCover.translatesAutoresizingMaskIntoConstraints = false
         imageCover.alpha = 0.2
         contentView.addSubview(imageCover)

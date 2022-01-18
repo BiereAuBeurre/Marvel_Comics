@@ -18,7 +18,8 @@ final class DetailsViewController: UIViewController {
     private let storageService = StorageService()
     var comic: ResultElement?
     private var isComicFavorite = false
-
+    
+    //MARK: -view life cycle methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFavoriteState()
@@ -28,12 +29,26 @@ final class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpUI()
-        print("we're now in detailsVC")
-//        print("comic from detailsVC display is : \(String(describing: comic))")
     }
     
-    
-    //MARK: - FAVORITES SETTINGS
+    //MARK: - OBJC METHODS
+    @objc
+    func toggleFavorite() {
+        /// Check if the recipe is already marked as favorite, then add it or remove it from our recipe entity (our favorite data base)
+        if isComicFavorite {
+            // suppression du favori
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+            removeFromFavorite()
+            isComicFavorite = false
+        } else if isComicFavorite == false {
+            // ajout du favori
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+            addToFavorite()
+            isComicFavorite = true
+        }
+    }
+
+    //MARK: - private methods
     private func fetchFavoriteState() {
         guard let comic = comic else { return }
         let comics = try? storageService.loadRecipes()
@@ -56,7 +71,7 @@ final class DetailsViewController: UIViewController {
             try storageService.saveRecipe(comic)
             fetchFavoriteState()
         } catch {
-            print("erreur : \(error)")//; showAlert("Can't save recipe to favorite", "Please try again later")
+            print("erreur : \(error.localizedDescription)")
         }
     }
     
@@ -66,34 +81,18 @@ final class DetailsViewController: UIViewController {
             try storageService.deleteRecipe(comic)
             isComicFavorite = false
         } catch {
-            print("erreur: \(error)")//; showAlert("Something went wrong", "Can't remove recipe from favorites right now. Please ty again later.")
-        }
-    }
-    
-    //MARK: - OBJC METHODS
-    @objc
-    func toggleFavorite() {
-        /// Check if the recipe is already marked as favorite, then add it or remove it from our recipe entity (our favorite data base)
-        if isComicFavorite {
-            // suppression du favori
-            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
-            removeFromFavorite()
-            isComicFavorite = false
-        } else if isComicFavorite == false {
-            // ajout du favori
-            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
-            addToFavorite()
-            isComicFavorite = true
+            print("erreur: \(error.localizedDescription)")
         }
     }
 }
 
 //MARK: - Setting up View
 extension DetailsViewController {
+    
     func setUpUI() {
         view.backgroundColor = .systemBackground
         
-        //MARK: - TITLE
+        // TITLE
         titleLabel.text = comic?.title
         titleLabel.textColor = .black
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -103,7 +102,7 @@ extension DetailsViewController {
         titleLabel.numberOfLines = 0
         view.addSubview(titleLabel)
         
-        //MARK: STACKVIEW
+        // STACKVIEW
         parentStackView.translatesAutoresizingMaskIntoConstraints = false
         parentStackView.axis = .vertical
         view.addSubview(parentStackView)
@@ -111,21 +110,18 @@ extension DetailsViewController {
         parentStackView.spacing = 16
         parentStackView.contentMode = .left
         
-        //MARK: -IMAGE COVER
+        // IMAGE COVER
         let imagepath = "\(comic?.thumbnail.path ?? "")"+"/portrait_xlarge."+"\(comic?.thumbnail.thumbnailExtension ?? "")"
-        if imagepath == "image_not_available" || comic?.thumbnail.path == "" || comic?.thumbnail.thumbnailExtension == "" || imagepath == "/portrait_xlarge." {
+        if imagepath == "/portrait_xlarge." {
             cover.image = UIImage(named: "logomarvel")
         } else {
-            print("image path is :\(imagepath)")
             cover.loadImage(imagepath)
         }
         cover.contentMode = .scaleAspectFit
         parentStackView.addArrangedSubview(cover)
 
-
-        //MARK: -DESCRIPTION/SYNOPSIS
+        // DESCRIPTION/SYNOPSIS
         synopsis.textColor = .black
-
         if comic?.resultDescription != "" {
             synopsis.text = comic?.resultDescription
         } else {
@@ -134,7 +130,7 @@ extension DetailsViewController {
         synopsis.font = UIFont.preferredFont(forTextStyle: .subheadline)
         parentStackView.addArrangedSubview(synopsis)
 
-        //MARK: - Constraints
+        // Constraints
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             titleLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),

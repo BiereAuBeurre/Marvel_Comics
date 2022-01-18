@@ -5,7 +5,6 @@
 //  Created by Manon Russo on 17/01/2022.
 //
 
-import Foundation
 import UIKit
 
 public enum DataMode {
@@ -21,17 +20,20 @@ public enum DataMode {
     }
 }
 
-class ComicsViewController: UIViewController {
+final class ComicsViewController: UIViewController {
     
-    var collectionView: UICollectionView!
+    //MARK: - properties
+    private var collectionView: UICollectionView!
     private let activityIndicator = UIActivityIndicatorView(style: .large)
-    var comics: [ResultElement] = []
-    var comicsService = ComicsService()
-    var dataMode: DataMode = .api
+    private var comics: [ResultElement] = []
+    private var comicsService = ComicsService()
     private var storageService = StorageService()
-
-
     
+    var dataMode: DataMode = .api
+
+
+
+    //MARK: - view life cycle methods
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.fetchComicsFromDataBase()
@@ -43,8 +45,10 @@ class ComicsViewController: UIViewController {
         self.fetchComicsFromApi()
         print("we're in comicsVC now")
     }
-    //MARK: - Fetching comics methods according to dataMode
     
+    //MARK: - private methods
+    
+    // Fetching comics methods according to dataMode
     private func fetchComicsFromDataBase() {
         guard dataMode == .favorites else { return }
         do { comics = try storageService.loadRecipes()
@@ -67,10 +71,8 @@ class ComicsViewController: UIViewController {
                 switch result {
                 case .success(let comics):
                     self.comics = comics.data.results
-//                    print("success!: \(comics)")
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
-
                 case .failure(let error):
                     print("error! : \(error.localizedDescription) \n\n\n\n \(error)")
                 }
@@ -89,7 +91,7 @@ class ComicsViewController: UIViewController {
 //MARK: -Setting up view
 extension ComicsViewController {
     
-    func setUpUI() {
+    private func setUpUI() {
         view.backgroundColor = .systemBackground
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -130,9 +132,11 @@ extension ComicsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return comics.count
     }
     
-
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let comicCell = collectionView.dequeueReusableCell(withReuseIdentifier: ComicCell.identifier, for: indexPath) as! ComicCell
+        guard let comicCell = collectionView.dequeueReusableCell(withReuseIdentifier: ComicCell.identifier, for: indexPath) as? ComicCell else {
+            assertionFailure("the dequeue collection view cell was of an unknown type")
+            return UICollectionViewCell()
+        }
         comicCell.comic = comics[indexPath.row]
         return comicCell
     }
