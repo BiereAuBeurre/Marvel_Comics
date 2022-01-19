@@ -34,7 +34,7 @@ final class DetailsViewController: UIViewController {
     //MARK: - OBJC METHODS
     @objc
     func toggleFavorite() {
-        /// Check if the recipe is already marked as favorite, then add it or remove it from our recipe entity (our favorite data base)
+        /// Check if the comic is already marked as favorite, then add it or remove it from our comic entity (our favorite data base)
         if isComicFavorite {
             // suppression du favori
             navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
@@ -51,7 +51,7 @@ final class DetailsViewController: UIViewController {
     //MARK: - private methods
     private func fetchFavoriteState() {
         guard let comic = comic else { return }
-        let comics = try? storageService.loadRecipes()
+        let comics = try? storageService.loadComics()
         guard let _ = comics?.first(where: { $0 == comic }) else { isComicFavorite = false; return }
         isComicFavorite = true
     }
@@ -68,7 +68,7 @@ final class DetailsViewController: UIViewController {
     private func addToFavorite() {
         guard let comic = comic else { return }
         do {
-            try storageService.saveRecipe(comic)
+            try storageService.saveComic(comic)
             fetchFavoriteState()
         } catch {
             print("erreur : \(error.localizedDescription)")
@@ -78,7 +78,7 @@ final class DetailsViewController: UIViewController {
     private func removeFromFavorite() {
         guard let comic = comic else { return }
         do {
-            try storageService.deleteRecipe(comic)
+            try storageService.deleteComic(comic)
             isComicFavorite = false
         } catch {
             print("erreur: \(error.localizedDescription)")

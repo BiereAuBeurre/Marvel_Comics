@@ -51,7 +51,7 @@ final class ComicsViewController: UIViewController {
     // Fetching comics methods according to dataMode
     private func fetchComicsFromDataBase() {
         guard dataMode == .favorites else { return }
-        do { comics = try storageService.loadRecipes()
+        do { comics = try storageService.loadComics()
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
@@ -70,7 +70,7 @@ final class ComicsViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let comics):
-                    self.comics = comics.data.results
+                    self.comics =  comics.data.results
                     self.collectionView.reloadData()
                     self.activityIndicator.stopAnimating()
                 case .failure(let error):

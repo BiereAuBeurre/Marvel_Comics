@@ -18,7 +18,8 @@ struct DataClass: Codable {
 
 // MARK: - Result
 struct ResultElement: Codable {
-    let title, resultDescription: String
+    let title: String
+    let resultDescription: String?
     let thumbnail: Thumbnail
 
     enum CodingKeys: String, CodingKey {

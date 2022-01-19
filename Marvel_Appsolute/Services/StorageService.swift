@@ -16,8 +16,8 @@ class StorageService {
     init(persistentContainer: NSPersistentContainer = AppDelegate.persistentContainer) {
         self.viewContext = persistentContainer.viewContext
     }
-
-    func loadRecipes() throws -> [ResultElement] {
+//fixme:
+    func loadComics() throws -> [ResultElement] {
         /// CoreData request, returns a comicEntiy object that is converted into comic as soon as it's loaded.
         let fetchRequest: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
         let comicEntities: [ComicEntity]
@@ -29,7 +29,7 @@ class StorageService {
         return comics
     }
     
-    func saveRecipe(_ comic: ResultElement) throws {
+    func saveComic(_ comic: ResultElement) throws {
         let comicEntity = ComicEntity(context: viewContext)
         comicEntity.title = comic.title
         comicEntity.thumbnail =  try? JSONEncoder().encode(comic.thumbnail)
@@ -40,7 +40,7 @@ class StorageService {
         }
     }
 
-    func deleteRecipe(_ comic: ResultElement) throws {
+    func deleteComic(_ comic: ResultElement) throws {
         let fetchRequest: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
         let predicate = NSPredicate(format: "title == %@", comic.title)
         fetchRequest.predicate = predicate
@@ -49,7 +49,7 @@ class StorageService {
         do { comicEntities = try viewContext.fetch(fetchRequest)
             comicEntities.forEach { (comicEntity) in
                 viewContext.delete(comicEntity) }
-            /// Save once recipe is deleted.
+            /// Save once comic is deleted.
             try viewContext.save() }
         catch { throw error }
     }
